@@ -37,3 +37,26 @@
     font-weight: 600;
     color: #65C95A;
   }
+
+  /* Button hover effect */
+.btn {
+    transition: transform 0.2s, background-color 0.3s;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Modal animation */
+  #success-modal {
+    transition: opacity 0.3s;
+  }
+  
+  #success-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  #success-modal:not(.hidden) {
+    opacity: 1;
+  }
