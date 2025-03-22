@@ -1,0 +1,39 @@
+/* Custom styles to enhance the design */
+
+/* Card image styling */
+.card img {
+    max-height: 280px;
+    object-fit: cover;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+  }
+  
+  @media (max-width: 768px) {
+    .card img {
+        border-top-left-radius: 0.75rem;
+        border-top-right-radius: 0.75rem;
+        border-bottom-left-radius: 0;
+    }
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  /* Input field focus styling */
+  .input:focus {
+    outline: 2px solid #65C95A;
+    border-color: #65C95A;
+  }
+  
+  /* Balance counter */
+  .balance {
+    font-weight: 600;
+  }
+  
+  /* Current donation styling */
+  .current-donation {
+    font-weight: 600;
+    color: #65C95A;
+  }
