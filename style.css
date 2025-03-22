@@ -1,5 +1,6 @@
 /* Custom styles to enhance the design */
-/* Tab styling */
+
+
 .tabs {
     display: flex;
     justify-content: center;
@@ -25,17 +26,19 @@
     color: #4B5563;
   }
   
-  /* History item styling */
-  #history-container .card {
-    transition: transform 0.3s;
+
+  main.container {
+    margin-top: 1rem; 
   }
   
-  #history-container .card:hover {
-    transform: translateY(-5px);
+ 
+  .tab:not(.tab-active) {
+    background-color: transparent;
+    color: #4B5563;
   }
+  
 
-/* Card image styling */
-.card img {
+  .card img {
     max-height: 280px;
     object-fit: cover;
     border-top-left-radius: 0.75rem;
@@ -50,30 +53,19 @@
     }
   }
   
-  /* Navbar styling */
+
   .navbar {
     padding: 0.75rem 1.5rem;
   }
   
-  /* Input field focus styling */
+
   .input:focus {
     outline: 2px solid #65C95A;
     border-color: #65C95A;
   }
   
-  /* Balance counter */
-  .balance {
-    font-weight: 600;
-  }
-  
-  /* Current donation styling */
-  .current-donation {
-    font-weight: 600;
-    color: #65C95A;
-  }
 
-  /* Button hover effect */
-.btn {
+  .btn {
     transition: transform 0.2s, background-color 0.3s;
   }
   
@@ -81,7 +73,7 @@
     transform: translateY(-2px);
   }
   
-  /* Modal animation */
+  
   #success-modal {
     transition: opacity 0.3s;
   }
@@ -93,4 +85,24 @@
   
   #success-modal:not(.hidden) {
     opacity: 1;
+  }
+  
+
+  #history-container .card {
+    transition: transform 0.3s;
+  }
+  
+  #history-container .card:hover {
+    transform: translateY(-5px);
+  }
+  
+
+  .balance {
+    font-weight: 600;
+  }
+  
+
+  .current-donation {
+    font-weight: 600;
+    color: #65C95A;
   }

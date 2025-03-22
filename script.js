@@ -3,16 +3,32 @@ const donationTab = document.querySelector('.donation-tab');
 const historyTab = document.querySelector('.history-tab');
 const donationSection = document.querySelector('.donation-section');
 const historySection = document.querySelector('.history-section');
-const historyContainer = document.getElementById('history-container');
 const donateButtons = document.querySelectorAll('.donate-btn');
 const donationInputs = document.querySelectorAll('.donation-input');
 const balanceElement = document.querySelector('.balance');
 const currentDonations = document.querySelectorAll('.current-donation');
 const successModal = document.getElementById('success-modal');
 const closeModalBtn = document.getElementById('close-modal');
+const historyContainer = document.getElementById('history-container');
 
 // Initial balance
 let balance = parseInt(balanceElement.textContent);
+
+// Function to format date
+function formatDate() {
+    const now = new Date();
+    const options = { 
+        timeZone: 'Asia/Dhaka',
+        year: 'numeric', 
+        month: 'short', 
+        day: '2-digit', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit',
+        hour12: false
+    };
+    return now.toLocaleString('en-US', options) + ' GMT +0600 (Bangladesh Standard Time)';
+}
 
 // Function to validate donation amount
 function validateDonation(amount, inputElement) {
@@ -29,65 +45,6 @@ function validateDonation(amount, inputElement) {
     }
 
     return true;
-}
-
-// Donation functionality
-donateButtons.forEach((button, index) => {
-    button.addEventListener('click', function() {
-        const inputElement = donationInputs[index];
-        const amount = parseInt(inputElement.value);
-        
-        if (!validateDonation(amount, inputElement)) {
-            return;
-        }
-
-        // Update balance
-        balance -= amount;
-        balanceElement.textContent = balance;
-
-        // Update current donation
-        const currentDonation = currentDonations[index];
-        let donationAmount = parseInt(currentDonation.getAttribute('data-donation'));
-        donationAmount += amount;
-        currentDonation.setAttribute('data-donation', donationAmount);
-        currentDonation.textContent = donationAmount + ' BDT';
-
-        // Show success modal
-        successModal.classList.remove('hidden');
-
-        // Clear input field
-        inputElement.value = '';
-    });
-});
-
-// Close modal button
-if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', function() {
-        successModal.classList.add('hidden');
-    });
-}
-
-// Close modal when clicking outside of it
-successModal.addEventListener('click', function(e) {
-    if (e.target === successModal) {
-        successModal.classList.add('hidden');
-    }
-});
-
-// Function to format date
-function formatDate() {
-    const now = new Date();
-    const options = { 
-        timeZone: 'Asia/Dhaka',
-        year: 'numeric', 
-        month: 'short', 
-        day: '2-digit', 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit',
-        hour12: false
-    };
-    return now.toLocaleString('en-US', options) + ' GMT +0600 (Bangladesh Standard Time)';
 }
 
 // Function to add a donation to history
@@ -110,7 +67,7 @@ donationTab.addEventListener('click', function(e) {
   historyTab.classList.remove('tab-active');
   donationSection.classList.remove('hidden');
   historySection.classList.add('hidden');
-});
+}); 
 
 historyTab.addEventListener('click', function(e) {
   e.preventDefault();
@@ -125,3 +82,52 @@ document.addEventListener('DOMContentLoaded', function() {
   donationTab.classList.add('tab-active');
 });
 
+// Donation functionality
+donateButtons.forEach((button, index) => {
+    button.addEventListener('click', function() {
+        const inputElement = donationInputs[index];
+        const amount = parseInt(inputElement.value);
+        
+        if (!validateDonation(amount, inputElement)) {
+            return;
+        }
+
+        // Update balance
+        balance -= amount;
+        balanceElement.textContent = balance;
+
+        // Update current donation
+        const currentDonation = currentDonations[index];
+        let donationAmount = parseInt(currentDonation.getAttribute('data-donation'));
+        donationAmount += amount;
+        currentDonation.setAttribute('data-donation', donationAmount);
+        currentDonation.textContent = donationAmount + ' BDT';
+
+        // Get donation cause
+        const causeElement = button.closest('.card').querySelector('.card-title');
+        const cause = causeElement.textContent;
+
+        // Add to history
+        addToHistory(amount, cause);
+
+        // Show success modal
+        successModal.classList.remove('hidden');
+
+        // Clear input field
+        inputElement.value = '';
+    });
+});
+
+// Close modal button
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function() {
+        successModal.classList.add('hidden');
+    });
+}
+
+// Close modal when clicking outside of it
+successModal.addEventListener('click', function(e) {
+    if (e.target === successModal) {
+        successModal.classList.add('hidden');
+    }
+});

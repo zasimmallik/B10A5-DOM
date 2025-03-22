@@ -29,35 +29,109 @@
         </div>
     </nav>
 
+    
+
     <main class="container mx-auto mt-32 mb-10 px-4">
+
         <div class="container mx-auto flex justify-center mt-24">
             <div class="flex bg-white rounded-t-lg overflow-hidden">
-                <a href="#" class="donation-tab px-8 py-3 text-center font-medium rounded-t-lg">Donation</a>
-                <a href="#" class="history-tab px-8 py-3 text-center font-medium rounded-t-lg">History</a>
+              <a href="#" class="donation-tab px-8 py-3 text-center font-medium rounded-t-lg">Donation</a>
+              <a href="#" class="history-tab px-8 py-3 text-center font-medium rounded-t-lg">History</a>
             </div>
-        </div>
+          </div>
           
+
         <section class="donation-section">
-          
+            <div class="card my-8 bg-base-100 shadow-xl">
+                <div class="card-body p-0 md:p-4">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-2/5">
+                            <img src="assets/noakhali.png" alt="Noakhali Flood" class="w-full h-full object-cover rounded-l-xl">
+                        </div>
+                        <div class="w-full md:w-3/5 p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <img src="assets/coin.png" alt="Coin" class="w-5 h-5">
+                                <span class="current-donation" data-donation="0">0 BDT</span>
+                            </div>
+                            <h2 class="card-title text-xl mb-2">Donate for Flood at Noakhali, Bangladesh</h2>
+                            <p class="mb-4 text-sm md:text-base">The recent floods in Noakhali have caused significant damage to homes, infrastructure. Your donation will help provide essential supplies and to those affected by this disaster. Every contribution, big or small, makes difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                            <div class="flex flex-col md:flex-row items-center gap-4">
+                                <div class="w-full md:w-1/2">
+                                    <input type="number" placeholder="Write Donation Amount" class="donation-input input input-bordered w-full" min="1">
+                                </div>
+                                <button class="donate-btn btn bg-[#65C95A] text-white hover:bg-[#4fa148] border-none w-full md:w-auto">Donate Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card my-8 bg-base-100 shadow-xl">
+                <div class="card-body p-0 md:p-4">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-2/5">
+                            <img src="assets/feni.png" alt="Feni Flood" class="w-full h-full object-cover rounded-l-xl">
+                        </div>
+                        <div class="w-full md:w-3/5 p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <img src="assets/coin.png" alt="Coin" class="w-5 h-5">
+                                <span class="current-donation" data-donation="600">600 BDT</span>
+                            </div>
+                            <h2 class="card-title text-xl mb-2">Donate for Flood Relief in Feni, Bangladesh</h2>
+                            <p class="mb-4 text-sm md:text-base">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+                            <div class="flex flex-col md:flex-row items-center gap-4">
+                                <div class="w-full md:w-1/2">
+                                    <input type="number" placeholder="Write Donation Amount" class="donation-input input input-bordered w-full" min="1">
+                                </div>
+                                <button class="donate-btn btn bg-[#65C95A] text-white hover:bg-[#4fa148] border-none w-full md:w-auto">Donate Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card my-8 bg-base-100 shadow-xl">
+                <div class="card-body p-0 md:p-4">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-2/5">
+                            <img src="assets/quota-protest.png" alt="Quota Movement" class="w-full h-full object-cover rounded-l-xl">
+                        </div>
+                        <div class="w-full md:w-3/5 p-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <img src="assets/coin.png" alt="Coin" class="w-5 h-5">
+                                <span class="current-donation" data-donation="2400">2400 BDT</span>
+                            </div>
+                            <h2 class="card-title text-xl mb-2">Aid for Injured in the Quota Movement</h2>
+                            <p class="mb-4 text-sm md:text-base">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                            <div class="flex flex-col md:flex-row items-center gap-4">
+                                <div class="w-full md:w-1/2">
+                                    <input type="number" placeholder="Write Donation Amount" class="donation-input input input-bordered w-full" min="1">
+                                </div>
+                                <button class="donate-btn btn bg-[#65C95A] text-white hover:bg-[#4fa148] border-none w-full md:w-auto">Donate Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-    
+
         <section class="history-section hidden">
             <div id="history-container">
-              
+               
             </div>
         </section>
     </main>
 
     <!-- Donation Success Modal -->
-<div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-    <div class="bg-white p-8 rounded-lg max-w-md mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Congrates!</h2>
-        <img src="assets/coin.png" alt="Coin" class="w-16 h-16 mx-auto mb-6">
-        <p class="text-xl mb-6">You Have Donated for Humankind</p>
-        <p class="text-2xl font-bold mb-8">Successfully</p>
-        <button id="close-modal" class="btn bg-gray-200 hover:bg-gray-300 border-none text-black py-2 px-6">close confirmation</button>
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Congrates!</h2>
+            <img src="assets/coin.png" alt="Coin" class="w-16 h-16 mx-auto mb-6">
+            <p class="text-xl mb-6">You Have Donated for Humankind</p>
+            <p class="text-2xl font-bold mb-8">Successfully</p>
+            <button id="close-modal" class="btn bg-gray-200 hover:bg-gray-300 border-none text-black py-2 px-6">close confirmation</button>
+        </div>
     </div>
-</div>
 
     <script src="script.js"></script>
 </body>

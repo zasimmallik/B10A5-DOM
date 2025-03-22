@@ -11,74 +11,88 @@
 <body>
     <nav class="navbar bg-base-100 shadow-md fixed top-0 left-0 right-0 z-50">
         <div class="navbar-start">
-            <a href="#" class="btn bg-[#65C95A] text-white hover:bg-[#4fa148] border-none">Blog</a>
+            <a href="index.html" class="btn bg-[#65C95A] text-white hover:bg-[#4fa148] border-none">Home</a>
         </div>
         <div class="navbar-center">
             <div class="flex items-center gap-2">
-                <img src="assets/logo.png" alt="Donate" class="w-8 h-8">
+                <img src="assets/coin.png" alt="Donate" class="w-8 h-8">
                 <h2 class="text-xl font-semibold">Donate Bangladesh</h2>
             </div>
         </div>
         <div class="navbar-end">
             <div class="flex items-center gap-2">
                 <img src="assets/coin.png" alt="Coin" class="w-6 h-6">
-                <span class="balance">6500</span>
+                <span>98600</span>
                 <span>BDT</span>
             </div>
         </div>
     </nav>
 
     <main class="container mx-auto mt-32 mb-10 px-4">
-        <h1 class="text-3xl font-bold text-center mb-8">Donate Bangladesh</h1>
-        <div class="card my-8 bg-base-100 shadow-xl">
-            <div class="card-body p-0 md:p-4">
-                <div class="flex flex-col md:flex-row">
-                    <div class="w-full md:w-2/5">
-                        <img src="assets/noakhali.png" alt="Noakhali Flood" class="w-full h-full object-cover rounded-l-xl">
-                    </div>
-                    <div class="w-full md:w-3/5 p-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <img src="assets/coin.png" alt="Coin" class="w-5 h-5">
-                            <span class="current-donation" data-donation="0">0 BDT</span>
-                        </div>
-                        <h2 class="card-title text-xl mb-2">Donate for Flood at Noakhali, Bangladesh</h2>
-                        <p class="mb-4 text-sm md:text-base">The recent floods in Noakhali have caused significant damage to homes, infrastructure. Your donation will help provide essential supplies and to those affected by this disaster. Every contribution, big or small, makes difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                        <div class="flex flex-col md:flex-row items-center gap-4">
-                            <div class="w-full md:w-1/2">
-                                <input type="number" placeholder="Write Donation Amount" class="donation-input input input-bordered w-full" min="1">
-                            </div>
-                            <button class="donate-btn btn bg-[#65C95A] text-white hover:bg-[#4fa148] border-none w-full md:w-auto">Donate Now</button>
-                        </div>
-                    </div>
+        <h1 class="text-3xl font-bold text-center mb-8">Blog</h1>
+        <div class="space-y-8">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title text-xl mb-4">What is the Document Object Model (DOM)?</h2>
+                    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page as a tree of nodes and objects that programs can modify. Through the DOM, JavaScript can access and change a document's structure, style, and content. It provides methods and properties to navigate, add, modify, or delete elements on a webpage.</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title text-xl mb-4">How do you select an element from the DOM?</h2>
+                    <p>There are several methods to select DOM elements:</p>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li><strong>getElementById</strong>: Gets element by ID</li>
+                        <li><strong>getElementsByClassName</strong>: Gets elements by class name</li>
+                        <li><strong>getElementsByTagName</strong>: Gets elements by tag name</li>
+                        <li><strong>querySelector</strong>: Gets first element matching CSS selector</li>
+                        <li><strong>querySelectorAll</strong>: Gets all elements matching CSS selector</li>
+                    </ul>
+                    <p class="mt-2">Modern approaches favor querySelector and querySelectorAll for their flexibility with CSS selectors.</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title text-xl mb-4">What is event delegation in the context of the DOM, and why is it useful?</h2>
+                    <p>Event delegation is a technique where you attach a single event listener to a parent element instead of multiple listeners on child elements. The listener then detects events that bubble up from the children.</p>
+                    <p class="mt-2"><strong>Benefits:</strong></p>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li>Improves memory efficiency by using fewer event listeners</li>
+                        <li>Works with dynamically added elements without adding new listeners</li>
+                        <li>Requires less code and maintenance</li>
+                        <li>Enhances performance, especially with many elements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title text-xl mb-4">How do you manipulate an element's attributes and styles using the DOM?</h2>
+                    
+                    <h3 class="font-bold mt-2">Manipulating Attributes:</h3>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li><strong>getAttribute()</strong>: Gets attribute value</li>
+                        <li><strong>setAttribute()</strong>: Sets attribute value</li>
+                        <li><strong>removeAttribute()</strong>: Removes attribute</li>
+                        <li><strong>Direct property access</strong>: element.id, element.src, etc.</li>
+                    </ul>
+
+                    <h3 class="font-bold mt-4">Manipulating Styles:</h3>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li><strong>element.style</strong>: Sets inline styles directly</li>
+                        <li><strong>className</strong>: Sets the entire class attribute</li>
+                        <li><strong>classList</strong>: Adds, removes, or toggles classes</li>
+                        <li><strong>getComputedStyle()</strong>: Gets computed styles</li>
+                    </ul>
+                    
+                    <p class="mt-2">Best practice: Use CSS classes with classList instead of inline styles to maintain separation of concerns.</p>
                 </div>
             </div>
         </div>
-        
-        <div class="card my-8 bg-base-100 shadow-xl">
-            <div class="card-body p-0 md:p-4">
-                <div class="flex flex-col md:flex-row">
-                    <div class="w-full md:w-2/5">
-                        <img src="assets/feni.png" alt="Feni Flood" class="w-full h-full object-cover rounded-l-xl">
-                    </div>
-                    <div class="w-full md:w-3/5 p-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <img src="assets/coin.png" alt="Coin" class="w-5 h-5">
-                            <span class="current-donation" data-donation="600">600 BDT</span>
-                        </div>
-                        <h2 class="card-title text-xl mb-2">Donate for Flood Relief in Feni, Bangladesh</h2>
-                        <p class="mb-4 text-sm md:text-base">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster.</p>
-                        <div class="flex flex-col md:flex-row items-center gap-4">
-                            <div class="w-full md:w-1/2">
-                                <input type="number" placeholder="Write Donation Amount" class="donation-input input input-bordered w-full" min="1">
-                            </div>
-                            <button class="donate-btn btn bg-[#65C95A] text-white hover:bg-[#4fa148] border-none w-full md:w-auto">Donate Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
