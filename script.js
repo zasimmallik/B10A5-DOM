@@ -1,4 +1,9 @@
 // DOM Elements
+const donationTab = document.querySelector('.donation-tab');
+const historyTab = document.querySelector('.history-tab');
+const donationSection = document.querySelector('.donation-section');
+const historySection = document.querySelector('.history-section');
+const historyContainer = document.getElementById('history-container');
 const donateButtons = document.querySelectorAll('.donate-btn');
 const donationInputs = document.querySelectorAll('.donation-input');
 const balanceElement = document.querySelector('.balance');
@@ -68,3 +73,55 @@ successModal.addEventListener('click', function(e) {
         successModal.classList.add('hidden');
     }
 });
+
+// Function to format date
+function formatDate() {
+    const now = new Date();
+    const options = { 
+        timeZone: 'Asia/Dhaka',
+        year: 'numeric', 
+        month: 'short', 
+        day: '2-digit', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit',
+        hour12: false
+    };
+    return now.toLocaleString('en-US', options) + ' GMT +0600 (Bangladesh Standard Time)';
+}
+
+// Function to add a donation to history
+function addToHistory(amount, cause) {
+    const historyItem = document.createElement('div');
+    historyItem.className = 'card my-4 bg-base-100 shadow-xl';
+    historyItem.innerHTML = `
+        <div class="card-body">
+            <h2 class="card-title">${amount} Taka is Donated for ${cause}</h2>
+            <p>Date : ${formatDate()}</p>
+        </div>
+    `;
+    historyContainer.prepend(historyItem);
+}
+
+// Tab switching functionality
+donationTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  donationTab.classList.add('tab-active');
+  historyTab.classList.remove('tab-active');
+  donationSection.classList.remove('hidden');
+  historySection.classList.add('hidden');
+});
+
+historyTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  historyTab.classList.add('tab-active');
+  donationTab.classList.remove('tab-active');
+  historySection.classList.remove('hidden');
+  donationSection.classList.add('hidden');
+});
+
+// Initialize the donation tab as active by default
+document.addEventListener('DOMContentLoaded', function() {
+  donationTab.classList.add('tab-active');
+});
+

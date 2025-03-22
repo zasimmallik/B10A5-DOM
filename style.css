@@ -1,4 +1,38 @@
 /* Custom styles to enhance the design */
+/* Tab styling */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .tab {
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .tab-active {
+    background-color: #65C95A;
+    color: white;
+  }
+  
+  .tab:not(.tab-active) {
+    background-color: transparent;
+    color: #4B5563;
+  }
+  
+  /* History item styling */
+  #history-container .card {
+    transition: transform 0.3s;
+  }
+  
+  #history-container .card:hover {
+    transform: translateY(-5px);
+  }
 
 /* Card image styling */
 .card img {
